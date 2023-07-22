@@ -18,7 +18,7 @@ esphome:
 
   # Automatically add the mac address to the name
   # so you can use a single firmware for all devices
-  name_add_mac_suffix: true
+  name_add_mac_suffix: "true"
 
   # This will allow for (future) project identification,
   # configuration and updates.
@@ -28,7 +28,7 @@ esphome:
 
 esp8266:
   board: esp01_1m
-  restore_from_flash: true
+  restore_from_flash: "true"
 
 logger:
 
@@ -88,17 +88,17 @@ api:
 globals:
   - id: voltage_multiply
     type: float
-    restore_value: true
+    restore_value: "true"
     initial_value: "0.3"
     
   - id: power_multiply 
     type: float
-    restore_value: true
+    restore_value: "true"
     initial_value: "0.133"
     
   - id: current_multiply 
     type: float
-    restore_value: true
+    restore_value: "true"
     initial_value: "0.805"
   
 binary_sensor:
@@ -107,7 +107,7 @@ binary_sensor:
     pin:
       number: GPIO3
       mode: INPUT_PULLUP
-      inverted: true
+      inverted: ""true""
     name: "Button"
     on_click:
 
@@ -155,8 +155,8 @@ switch:
     name: "Disable LED"
     id: disable_led
     icon: "mdi:led-variant-off"
-    restore_state: "${default_state}"
-    optimistic: true
+    restore_mode: "${default_state}"
+    optimistic: ""true""
     on_turn_on:
       #Flash twice
       - light.turn_off: led
@@ -193,7 +193,7 @@ switch:
     id: disable_button
     icon: "mdi:toggle-switch-off-outline"
     restore_mode: "${default_state}"
-    optimistic: true
+    optimistic: "true"
     on_turn_on:
       #Flash thrice
       - light.turn_off: led
@@ -245,7 +245,7 @@ sensor:
   - platform: hlw8012
     sel_pin:
       number: GPIO12
-      inverted: true
+      inverted: "true"
     cf_pin: GPIO4
     cf1_pin: GPIO5
     change_mode_every: 3
@@ -341,7 +341,7 @@ output:
     id: state_led
     pin:
       number: GPIO13
-      inverted: true
+      inverted: "true"
 
 light:
   - platform: binary
