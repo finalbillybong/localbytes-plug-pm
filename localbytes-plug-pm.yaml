@@ -155,7 +155,7 @@ switch:
     name: "Disable LED"
     id: disable_led
     icon: "mdi:led-variant-off"
-    restore_mode: "${default_state}"
+    restore_state: "${default_state}"
     optimistic: true
     on_turn_on:
       #Flash twice
